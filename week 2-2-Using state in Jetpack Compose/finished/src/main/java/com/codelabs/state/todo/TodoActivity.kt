@@ -16,12 +16,16 @@
 
 package com.codelabs.state.todo
 
+import android.app.Application
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.codelabs.state.ui.StateCodelabTheme
 
 class TodoActivity : AppCompatActivity() {
@@ -51,4 +55,20 @@ private fun TodoActivityScreen(todoViewModel: TodoViewModel) {
         onEditItemChange = todoViewModel::onEditItemChange,
         onEditDone = todoViewModel::onEditDone
     )
+}
+
+@Preview
+@Composable
+fun TodoActivityScreenPreview(todoViewModel: TodoViewModel = TodoViewModel() ) {
+
+    TodoActivityScreen(todoViewModel)
+//    TodoScreen(
+//        items = todoViewModel.todoItems,
+//        currentlyEditing = todoViewModel.currentEditItem,
+//        onAddItem = todoViewModel::addItem,
+//        onRemoveItem = todoViewModel::removeItem,
+//        onStartEdit = todoViewModel::onEditItemSelected,
+//        onEditItemChange = todoViewModel::onEditItemChange,
+//        onEditDone = todoViewModel::onEditDone
+//    )
 }
