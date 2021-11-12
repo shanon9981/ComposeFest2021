@@ -34,12 +34,12 @@ fun generateRandomTodoItem(): TodoItem {
     val icon = TodoIcon.values().random()
     return TodoItem(message, icon)
 }
-
-fun main() {
-    val list = listOf(1, 2, 3)
-    var currentCount = 0
-    for (item in list) {
-        currentCount += item
-        println(currentCount)
-    }
-}
+//
+//fun main() {
+//    val list = listOf(1, 2, 3)
+//    var currentCount = 0
+//    for (item in list) {
+//        currentCount += item
+//        println(currentCount)
+//    }
+//}
