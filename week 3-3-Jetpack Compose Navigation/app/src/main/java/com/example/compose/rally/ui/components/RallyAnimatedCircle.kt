@@ -23,6 +23,8 @@ import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.core.updateTransition
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -32,9 +34,20 @@ import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 private const val DividerLengthInDegrees = 1.8f
+
+@Preview
+@Composable
+fun PreviewAnimatedCircle(){
+    AnimatedCircle(
+        modifier = Modifier.background(Color.White).size(320.dp),
+        proportions = listOf(0.25f, 0.5f, 0.25f),
+        colors = listOf(Color.Red, Color.DarkGray, Color.Black)
+    )
+}
 
 /**
  * A donut chart that animates when loaded.
